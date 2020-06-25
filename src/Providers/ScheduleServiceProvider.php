@@ -1,6 +1,6 @@
 <?php
 
-namespace Bishopm\Skeleton\Providers;
+namespace Bishopm\Studioblog\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Console\Scheduling\Schedule;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Bishopm\Skeleton\Models;
+namespace Bishopm\Studioblog\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

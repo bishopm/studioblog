@@ -1,9 +1,9 @@
 <?php
 
-namespace Bishopm\Skeleton\Http\Controllers;
+namespace Bishopm\Studioblog\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Bishopm\Skeleton\Models\Skeleton;
+use Bishopm\Studioblog\Models\Skeleton;
 use Illuminate\Http\Request;
 
 class SkeletonsController extends Controller

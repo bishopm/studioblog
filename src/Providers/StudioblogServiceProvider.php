@@ -1,6 +1,6 @@
 <?php
 
-namespace Bishopm\Skeleton\Providers;
+namespace Bishopm\Studioblog\Providers;
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
@@ -8,10 +8,10 @@ use Illuminate\Foundation\AliasLoader;
 use Illuminate\Contracts\Events\Dispatcher;
 use Form;
 
-class SkeletonServiceProvider extends ServiceProvider
+class StudioblogServiceProvider extends ServiceProvider
 {
     protected $commands = [
-        'Bishopm\Skeleton\Console\InstallSkeletonCommand'
+        'Bishopm\Studioblog\Console\InstallPackageCommand'
     ];
 
     public function boot(Dispatcher $events)
@@ -22,7 +22,7 @@ class SkeletonServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/../Resources/views', 'skeleton');
         $this->loadMigrationsFrom(__DIR__.'/../Database/migrations');
         $this->publishes([__DIR__.'/../Assets' => public_path('vendor/bishopm')], 'public');
-        config(['auth.providers.users.model'=>'Bishopm\Skeleton\Models\User']);
+        config(['auth.providers.users.model'=>'Bishopm\Studioblog\Models\User']);
         config(['queue.default'=>'database']);
         Form::component('bsText', 'skeleton::components.text', ['name', 'label' => '', 'placeholder' => '', 'value' => null, 'attributes' => []]);
         Form::component('bsPassword', 'skeleton::components.password', ['name', 'label' => '', 'placeholder' => '', 'value' => null, 'attributes' => []]);
@@ -44,6 +44,6 @@ class SkeletonServiceProvider extends ServiceProvider
     public function register()
     {
         $this->commands($this->commands);
-        $this->app->register('Bishopm\Skeleton\Providers\ScheduleServiceProvider');
+        $this->app->register('Bishopm\Studioblog\Providers\ScheduleServiceProvider');
     }
 }

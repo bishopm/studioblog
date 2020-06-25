@@ -1,6 +1,6 @@
 <?php
 
-namespace Bishopm\Skeleton\Console;
+namespace Bishopm\Studioblog\Console;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Hash;
