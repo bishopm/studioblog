@@ -7,8 +7,8 @@ use Illuminate\Support\Facades\Hash;
 
 class InstallPackageCommand extends Command
 {
-    protected $signature = 'skeleton:install';
-    protected $description = 'Initial setup of Skeleton';
+    protected $signature = 'studioblog:install';
+    protected $description = 'Initial setup of StudioBlog';
 
     public function handle()
     {

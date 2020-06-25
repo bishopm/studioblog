@@ -3,27 +3,27 @@
 namespace Bishopm\Studioblog\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Bishopm\Studioblog\Models\Skeleton;
+use Bishopm\Studioblog\Models\Studioblog;
 use Illuminate\Http\Request;
 
-class SkeletonsController extends Controller
+class StudioblogsController extends Controller
 {
 
     public function index()
     {
-        $skeletons = Skeleton::orderBy('created_at')->get();
-        return view('skeleton::skeletons.index',compact('skeletons'));
+        $studioblogs = Studioblog::orderBy('created_at')->get();
+        return view('studioblog::studioblogs.index',compact('studioblogs'));
     }
 
     public function edit($id)
     {
-        $skeleton = Skeleton::find($id);
-        return view('skeleton::skeletons.edit',compact($skeleton));
+        $studioblog = Studioblog::find($id);
+        return view('studioblog::studioblogs.edit',compact($studioblog));
     }
 
     public function create()
     {
-        return view('skeleton::skeletons.create');
+        return view('studioblog::studioblogs.create');
     }
 
     public function show($slug)
@@ -33,17 +33,17 @@ class SkeletonsController extends Controller
 
     public function store(Request $request)
     {
-        $skeleton = Skeleton::create($request->except('_token','files'));
-        return redirect()->route('skeletons.index')
-            ->withSuccess('New skeleton added');
+        $studioblog = Studioblog::create($request->except('_token','files'));
+        return redirect()->route('studioblogs.index')
+            ->withSuccess('New studioblog added');
     }
     
     public function update(Request $request)
     {
-        $skeleton = Skeleton::find($request->id);
-        $skeleton->update($request->except('_token','files'));
-        return redirect()->route('skeletons.index')
-            ->withSuccess('Skeleton updated');
+        $studioblog = Studioblog::find($request->id);
+        $studioblog->update($request->except('_token','files'));
+        return redirect()->route('studioblogs.index')
+            ->withSuccess('Studioblog updated');
     }
 
     public function destroy()

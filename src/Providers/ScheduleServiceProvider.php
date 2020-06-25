@@ -11,7 +11,7 @@ class ScheduleServiceProvider extends ServiceProvider
     {
         $this->app->booted(function () {
             $schedule = $this->app->make(Schedule::class);
-            // $schedule->command('skeleton:monthlyemails')->monthlyOn(1, '07:15');
+            // $schedule->command('studioblog:monthlyemails')->monthlyOn(1, '07:15');
         });
     }
 

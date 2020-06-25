@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSkeletonsTable extends Migration
+class CreateStudioBlogsTable extends Migration
 {
 	/**
 	 * Run the migrations.
@@ -12,10 +12,10 @@ class CreateSkeletonsTable extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('skeletons', function(Blueprint $table) {
+		Schema::create('studioblogs', function(Blueprint $table) {
 			$table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('skeleton')->nullable();
+            $table->string('studioblog')->nullable();
             $table->timestamps();
 		});
 	}
@@ -27,6 +27,6 @@ class CreateSkeletonsTable extends Migration
 	 */
 	public function down()
 	{
-		Schema::drop('skeletons');
+		Schema::drop('studioblogs');
 	}
 }

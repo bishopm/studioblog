@@ -1,4 +1,4 @@
-# skeleton
+# studioblog
 
 ## License
 
